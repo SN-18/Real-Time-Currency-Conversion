@@ -1,17 +1,21 @@
 import tkinter as tk
 from tkinter import *
 import tkinter.messagebox
+import trends
+
+
 
 # GUI
 root = tk.Tk()
 
 root.title("Currency converter")
 
-Tops = Frame(root, bg='#e6e5e5', pady=2, width=1850, height=100, relief="ridge")
-Tops.grid(row=0, column=0)
+Tops = Frame(root, bg='#42adf5', pady=2, width=1850, height=100, relief="ridge")
+Tops.grid(row=0, column=5)
 
 headlabel = tk.Label(Tops, font=('red', 19, 'bold'), text='Currency converter ',
-                     bg='#e6e5e5', fg='black')
+                     bg='#42adf5', fg='black')
+##42adf5
 headlabel.grid(row=1, column=0, sticky=W)
 
 variable1 = tk.StringVar(root)
@@ -19,6 +23,7 @@ variable2 = tk.StringVar(root)
 
 variable1.set(" CURRENCY ")
 variable2.set(" CURRENCY ")
+
 
 
 # Function To For Real Time Currency Conversion
@@ -52,36 +57,37 @@ def clear_all():
 
 CurrenyCode_list = ["INR", "USD", "CAD", "CNY", "DKK", "EUR"]
 
-root.configure(background='#e6e5e5')
+##42adf5
+root.configure(background='#42adf5')
 root.geometry("700x400")
 
-Label_1 = Label(root, font=('lato black', 27, 'bold'), text="", padx=2, pady=2, bg="#e6e5e5", fg="black")
+Label_1 = Label(root, font=('lato black', 27, 'bold'), text="", padx=2, pady=2, bg="#42adf5", fg="black")
 Label_1.grid(row=1, column=0, sticky=W)
 
-label1 = tk.Label(root, font=('lato black', 15, 'bold'), text="\t    Amount  :  ", bg="#e6e5e5", fg="black")
+label1 = tk.Label(root, font=('lato black', 15, 'bold'), text="\t    Amount  :  ", bg="#42adf5", fg="black")
 label1.grid(row=2, column=0, sticky=W)
 
-label1 = tk.Label(root, font=('lato black', 15, 'bold'), text="\t    From Currency  :  ", bg="#e6e5e5", fg="black")
+label1 = tk.Label(root, font=('lato black', 15, 'bold'), text="\t    From Currency  :  ", bg="#42adf5", fg="black")
 label1.grid(row=3, column=0, sticky=W)
 
-label1 = tk.Label(root, font=('lato black', 15, 'bold'), text="\t    To Currency  :  ", bg="#e6e5e5", fg="black")
+label1 = tk.Label(root, font=('lato black', 15, 'bold'), text="\t    To Currency  :  ", bg="#42adf5", fg="black")
 label1.grid(row=4, column=0, sticky=W)
 
-label1 = tk.Label(root, font=('lato black', 15, 'bold'), text="\t    Converted Amount  :  ", bg="#e6e5e5", fg="black")
+label1 = tk.Label(root, font=('lato black', 15, 'bold'), text="\t    Converted Amount  :  ", bg="#42adf5", fg="black")
 label1.grid(row=8, column=0, sticky=W)
 
-Label_1 = Label(root, font=('lato black', 7, 'bold'), text="", padx=2, pady=2, bg="#e6e5e5", fg="black")
-Label_1.grid(row=5, column=0, sticky=W)
+Label_1 = Label(root, font=('lato black', 7, 'bold'), text="", padx=2, pady=2, bg="#42adf5", fg="black")
+Label_1.grid(row=5, column=11, sticky=W)
 
-Label_1 = Label(root, font=('lato black', 7, 'bold'), text="", padx=2, pady=2, bg="#e6e5e5", fg="black")
-Label_1.grid(row=7, column=0, sticky=W)
+Label_1 = Label(root, font=('lato black', 7, 'bold'), text="", padx=2, pady=2, bg="#42adf5", fg="black")
+Label_1.grid(row=7, column=11, sticky=W)
 
 FromCurrency_option = tk.OptionMenu(root, variable1, *CurrenyCode_list)
 ToCurrency_option = tk.OptionMenu(root, variable2, *CurrenyCode_list)
 
 # FromCurrency_option.grid(row=3, column=0, ipadx=45, sticky=E)
-FromCurrency_option.grid(row=3, column=0, ipadx=45, sticky=E)
-ToCurrency_option.grid(row=4, column=0, ipadx=45, sticky=E)
+FromCurrency_option.grid(row=3, column=5, ipadx=45, sticky=E)
+ToCurrency_option.grid(row=4, column=5, ipadx=45, sticky=E)
 
 Amount1_field = tk.Entry(root)
 Amount1_field.grid(row=2, column=0, sticky=E)
@@ -95,13 +101,28 @@ Label_9 = Button(root, font=('arial', 15, 'bold'), text="   Convert  ", padx=2, 
                  command=RealTimeCurrencyConversion)
 Label_9.grid(row=6, column=0)
 
-Label_1 = Label(root, font=('lato black', 7, 'bold'), text="", padx=2, pady=2, bg="#e6e5e5", fg="black")
+
+
+Label_1 = Label(root, font=('lato black', 7, 'bold'), text="", padx=2, pady=2, bg="#42adf5", fg="black")
 Label_1.grid(row=9, column=0, sticky=W)
 
 Label_9 = Button(root, font=('arial', 15, 'bold'), text="   Clear All  ", padx=2, pady=2, bg="lightblue", fg="red",
                  command=clear_all)
 Label_9.grid(row=10, column=0)
 
+def close():
+   #win.destroy()
+   root.quit()
+
+# Create a Button to call close()
+Label_10 = Button(root, font=('arial', 15, 'bold'), text="   Show Stats  ", padx=2, pady=2, bg="blue", fg="red",
+                 command=close)
+Label_10.grid(row=9, column=5)
+
+
+
+root.mainloop()
+
 root.mainloop()
 
 
@@ -111,48 +132,19 @@ root.mainloop()
 
 
 
-"""sql lite option"""
-import tkinter as tk
-from tkinter import ttk
-import sqlite3
 
-conn = sqlite3.connect("/database")
-c = conn.cursor()
+# base currency or reference currency
+base="USD"
 
-def get_value():
-    c.execute("SELECT var FROM state WHERE id = 1")
-    return c.fetchone()[0]
+# required currency for plot
+out_curr="INR"
 
-def change_value():
-    c.execute("UPDATE state SET var = 1 - var WHERE id = 1")
-    conn.commit()
+# exchange data from a date
+start_date="2021-01-01"
 
-def check_value():
-    state = 'disabled' if get_value() == 1 else 'normal'
-    button_1.config(state=state)
-    button_2.config(state=state)
-    root.after(100, check_value)
+# exchange data till a date
+end_date="2021-03-04"
 
-root = tk.Tk()
 
-tab = ttk.Notebook(root)
-tab.pack(fill='both', expand=1)
 
-frame1 = ttk.Frame(tab)
-frame2 = ttk.Frame(tab)
-frame3 = ttk.Frame(tab)
-
-tab.add(frame1, text='Mytab1')
-tab.add(frame2, text='Mytab2')
-tab.add(frame3, text='Mytab3')
-
-button_1 = ttk.Button(frame1, text='Color change')
-button_1.pack()
-
-button_2 = ttk.Button(frame2, text='Generate text')
-button_2.pack()
-
-ttk.Button(frame3, text='Change value', command=change_value).pack()
-
-check_value() # check value and update state of buttons periodically
-root.mainloop()
+trends.trends()
