@@ -17,8 +17,10 @@
   
   <li>From the terminal, go to the directory that was just cloned using:
 
-  
-    ``` cd Pathname://FileName ``` 
+  ```
+cd Pathname://FileName
+```
+     
     
   </li>
   
