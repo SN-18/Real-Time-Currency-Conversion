@@ -18,13 +18,13 @@
   <li>From the terminal, go to the directory that was just cloned using:
 
   
-    ``` cd .\Path\Filename``` 
+    ``` cd Pathname://FileName ``` 
     
   </li>
   
   <li>Finally, using the terminal, run:
   python main.py</li>
   
-  <li>If you don't have python installed, install it using <a href="(https://www.python.org/downloads/)https://www.python.org/downloads/">Official Page</a> </li>
+  <li>If you don't have python installed, install it using <a href="https://www.python.org/downloads/)https://www.python.org/downloads/">Official Page</a> </li>
   
 </ol>
