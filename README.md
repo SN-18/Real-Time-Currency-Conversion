@@ -1,4 +1,4 @@
-# Real-Time-Currency-Conversion
+# Real Time Currency Conversion System
 
 ## How to run the project:<br>
 <ol>
