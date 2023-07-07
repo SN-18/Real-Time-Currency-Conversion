@@ -37,4 +37,12 @@ cd Pathname://FileName
 
     
   </li>
+
+  <li>
+    To resolve any dependency issues, use the following command:
+
+    ``` $ pip install -r requirements.txt ```
+
+    This will add all the required dependencies and packages to your virtual environment or system. 
+  </li>
 </ol>
